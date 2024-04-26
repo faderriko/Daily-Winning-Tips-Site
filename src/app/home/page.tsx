@@ -46,9 +46,9 @@ export default function HomePage() {
           <span className="flex-shrink mx-4 card-title">OUR WINNING HISTORY</span>
           <div className="flex-grow"></div>
         </div>
-        {results.map((item: any) => (
+        {results.map((item: any,index: any) => (
           
-          <div className="p-5 overflow-x-auto">
+          <div key = {index} className="p-5 overflow-x-auto">
             <p className="card-title">{item.date}</p>
             <table className="table bg-base-200">
               {/* head */}
@@ -62,7 +62,7 @@ export default function HomePage() {
                 </tr>
               </thead>
               {item.gamesList.map((listItem: any, index: any) => (
-                <Table tableData={listItem} index={index}/>
+                <Table key = {index} tableData={listItem} index={index}/>
               ))}
             </table>
           </div>

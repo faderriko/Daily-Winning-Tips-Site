@@ -44,7 +44,7 @@ export default function Results() {
                             </tr>
                         </thead>
                         {item.gamesList.map((listItem: any, index: any) => (
-                            <Table tableData={listItem} index={index} />
+                            <Table key = {index} tableData={listItem} index={index} />
                         ))}
                     </table>
                 </div>
