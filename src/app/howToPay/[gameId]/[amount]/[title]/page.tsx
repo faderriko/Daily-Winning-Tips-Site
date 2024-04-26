@@ -59,7 +59,7 @@ export default function HowToPay({ params }: { params: { gameId: any, amount: an
                         <p className="text-base text-bold">1.Go to M-PESA</p>
                         <p className="text-base">2. Select Lipa na M-PESA</p>
                         <p className="text-base">3. Select Buy Goods</p>
-                        <p className="text-base">4. Enter Till No </p>
+                        <p className="text-base">4. Enter Till No: 5150225</p>
                         <p className="text-base">5. Enter amount {params.amount.replace("%20", " ")}</p>
                         <p className="text-base">6. After you have paid, you will receive a payment confirmation message from M-PESA</p>
                         <p className="text-base">7. Copy and paste the message below and validate</p>
