@@ -8,21 +8,21 @@ export default function Results() {
     const [results, setResults] = useState<any>([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await fetch("https://faderriko.github.io/WebTips/prediction_results.json");
-                const data = await response.json();
-                console.log("response data", data.predictionResults)
-                setResults(data.predictionResults);
-                setLoading(false);
-            } catch (error) {
-                setError(error as any);
-                setLoading(false);
-            }
+    async function fetchData() {
+        try {
+            const response = await fetch("https://faderriko.github.io/WebTips/prediction_results.json");
+            const data = await response.json();
+            console.log("response data", data.predictionResults)
+            setResults(data.predictionResults);
+            setLoading(false);
+        } catch (error) {
+            setError(error as any);
+            setLoading(false);
         }
+    }
+    useEffect(() => {
         fetchData();
-    }, []);
+    }, [fetchData]);
     return (
         <div>
             <div className="relative flex pt-10 items-center">

@@ -15,85 +15,86 @@ export default function Premium() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
+  async function fetchData() {
+    try {
 
-        const response = await fetch("https://faderriko.github.io/WebTips/predictions.json");
-        const data = await response.json();
-        const name = params.premiumName.split('%20').join(' ')
-        const id = params.premiumId
+      const response = await fetch("https://faderriko.github.io/WebTips/predictions.json");
+      const data = await response.json();
+      const name = params.premiumName.split('%20').join(' ')
+      const id = params.premiumId
 
-        if (params.premiumId == "golden_draw_one") {
-          setPredictions(data.golden_draw_one)
-          }
-
-          if (params.premiumId == "golden_draw_two") {
-            setPredictions(data.golden_draw_two)
-
-          }
-          if (params.premiumId == "golden_draw_three") {
-            setPredictions(data.golden_draw_three)
-
-          }
-
-          if (params.premiumId == "sportpesa_mega_jackpot") {
-            setPredictions(data.sportpesa_mega_jackpot)
-
-          }
-
-          if (params.premiumId == "sportpesa_mid_week_jackpot") {
-            setPredictions(data.sportpesa_mid_week_jackpot)
-
-          }
-
-          if (params.premiumId == "betika_jackpot") {
-            setPredictions(data.betika_jackpot)
-
-          }
-
-          if (params.premiumId == "mozzart_jackpot") {
-            setPredictions(data.mozzart_jackpot)
-
-          }
-
-          if (params.premiumId == "correct_score_one") {
-            setPredictions(data.correct_score_one)
-
-          }
-
-          if (params.premiumId == "correct_score_two") {
-            setPredictions(data.correct_score_two)
-
-          }
-
-          if (params.premiumId == "correct_score_three") {
-            setPredictions(data.correct_score_three)
-
-          }
-          if (params.premiumId == "seven_days_running_bets") {
-            setPredictions(data.seven_days_running_bets)
-
-          }
-          if (params.premiumId == "fourteen_days_running_bets") {
-            setPredictions(data.fourteen_days_running_bets)
-
-          }
-          if (params.premiumId == "thirty_days_running_bets") {
-            setPredictions(data.thirty_days_running_bets)
-
-          }
-
-          setName(name)
-          setId(id)
-          setLoading(false);
-        } catch (error) {
-          setError(error as any);
-          setLoading(false);
+      if (params.premiumId == "golden_draw_one") {
+        setPredictions(data.golden_draw_one)
         }
+
+        if (params.premiumId == "golden_draw_two") {
+          setPredictions(data.golden_draw_two)
+
+        }
+        if (params.premiumId == "golden_draw_three") {
+          setPredictions(data.golden_draw_three)
+
+        }
+
+        if (params.premiumId == "sportpesa_mega_jackpot") {
+          setPredictions(data.sportpesa_mega_jackpot)
+
+        }
+
+        if (params.premiumId == "sportpesa_mid_week_jackpot") {
+          setPredictions(data.sportpesa_mid_week_jackpot)
+
+        }
+
+        if (params.premiumId == "betika_jackpot") {
+          setPredictions(data.betika_jackpot)
+
+        }
+
+        if (params.premiumId == "mozzart_jackpot") {
+          setPredictions(data.mozzart_jackpot)
+
+        }
+
+        if (params.premiumId == "correct_score_one") {
+          setPredictions(data.correct_score_one)
+
+        }
+
+        if (params.premiumId == "correct_score_two") {
+          setPredictions(data.correct_score_two)
+
+        }
+
+        if (params.premiumId == "correct_score_three") {
+          setPredictions(data.correct_score_three)
+
+        }
+        if (params.premiumId == "seven_days_running_bets") {
+          setPredictions(data.seven_days_running_bets)
+
+        }
+        if (params.premiumId == "fourteen_days_running_bets") {
+          setPredictions(data.fourteen_days_running_bets)
+
+        }
+        if (params.premiumId == "thirty_days_running_bets") {
+          setPredictions(data.thirty_days_running_bets)
+
+        }
+
+        setName(name)
+        setId(id)
+        setLoading(false);
+      } catch (error) {
+        setError(error as any);
+        setLoading(false);
       }
+    }
+
+  useEffect(() => {
     fetchData();
-    }, []);
+    }, [fetchData]);
 
   return (
     <section>

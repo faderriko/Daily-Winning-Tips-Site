@@ -14,30 +14,31 @@ export default function Plan({ params }: { params: { planIndex: any } }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("https://faderriko.github.io/WebTips/plans.json");
-        const response2 = await fetch("https://faderriko.github.io/WebTips/predictions.json");
+  async function fetchData() {
+    try {
+      const response = await fetch("https://faderriko.github.io/WebTips/plans.json");
+      const response2 = await fetch("https://faderriko.github.io/WebTips/predictions.json");
 
-        const data = await response.json();
-        const data2 = await response2.json();
-      
-        if (params.planIndex == 0) {
-          setPredictions(data2.free_tips)
-        }
-
-        setpackages(data.plans[params.planIndex].productsList);
-        setName(data.plans[params.planIndex].name)
-       
-        setLoading(false);
-      } catch (error) {
-        setError(error as any);
-        setLoading(false);
+      const data = await response.json();
+      const data2 = await response2.json();
+    
+      if (params.planIndex == 0) {
+        setPredictions(data2.free_tips)
       }
+
+      setpackages(data.plans[params.planIndex].productsList);
+      setName(data.plans[params.planIndex].name)
+     
+      setLoading(false);
+    } catch (error) {
+      setError(error as any);
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <section className=''>

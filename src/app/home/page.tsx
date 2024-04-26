@@ -13,23 +13,24 @@ export default function HomePage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("https://faderriko.github.io/WebTips/plans.json");
-        const response2 = await fetch("https://faderriko.github.io/WebTips/prediction_results.json");
-        const data = await response.json();
-        const data2 = await response2.json();
-        setpackages(data.plans);
-        setResults(data2.predictionResults);
-        setLoading(false);
-      } catch (error) {
-        setError(error as any);
-        setLoading(false);
-      }
+  async function fetchData() {
+    try {
+      const response = await fetch("https://faderriko.github.io/WebTips/plans.json");
+      const response2 = await fetch("https://faderriko.github.io/WebTips/prediction_results.json");
+      const data = await response.json();
+      const data2 = await response2.json();
+      setpackages(data.plans);
+      setResults(data2.predictionResults);
+      setLoading(false);
+    } catch (error) {
+      setError(error as any);
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <section>
