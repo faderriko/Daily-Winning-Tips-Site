@@ -15,7 +15,7 @@ export default function Premium() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  async function fetchData() {
+  const fetchData = async ()=> {
     try {
 
       const response = await fetch("https://faderriko.github.io/WebTips/predictions.json");

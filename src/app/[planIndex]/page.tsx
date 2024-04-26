@@ -14,7 +14,7 @@ export default function Plan({ params }: { params: { planIndex: any } }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  async function fetchData() {
+  const fetchData = async ()=> {
     try {
       const response = await fetch("https://faderriko.github.io/WebTips/plans.json");
       const response2 = await fetch("https://faderriko.github.io/WebTips/predictions.json");
