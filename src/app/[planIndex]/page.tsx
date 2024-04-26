@@ -58,7 +58,6 @@ export default function Plan({ params }: { params: { planIndex: any } }) {
             {/* head */}
             <thead>
               <tr>
-                <th></th>
                 <th>Date</th>
                 <th>Fixture</th>
                 <th>Predictions</th>

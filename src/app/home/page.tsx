@@ -54,7 +54,6 @@ export default function HomePage() {
               {/* head */}
               <thead>
                 <tr>
-                  <th></th>
                   <th>Fixture</th>
                   <th>Odds</th>
                   <th>Predictions</th>
