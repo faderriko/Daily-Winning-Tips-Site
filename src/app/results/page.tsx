@@ -20,9 +20,7 @@ export default function Results() {
             setLoading(false);
         }
     }
-    useEffect(() => {
-        fetchData();
-    }, [fetchData]);
+    fetchData();
     return (
         <div>
             <div className="relative flex pt-10 items-center">
@@ -46,7 +44,7 @@ export default function Results() {
                             </tr>
                         </thead>
                         {item.gamesList.map((listItem: any, index: any) => (
-                            <Table tableData={listItem} index={index}/>
+                            <Table tableData={listItem} index={index} />
                         ))}
                     </table>
                 </div>

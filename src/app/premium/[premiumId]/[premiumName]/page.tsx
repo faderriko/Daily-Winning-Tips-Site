@@ -15,7 +15,7 @@ export default function Premium() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async ()=> {
+  async function fetchData() {
     try {
 
       const response = await fetch("https://faderriko.github.io/WebTips/predictions.json");
@@ -91,11 +91,8 @@ export default function Premium() {
         setLoading(false);
       }
     }
-
-  useEffect(() => {
     fetchData();
-    }, [fetchData]);
-
+  
   return (
     <section>
       <Hero name={name} />

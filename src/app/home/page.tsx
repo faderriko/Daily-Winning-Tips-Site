@@ -13,7 +13,7 @@ export default function HomePage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async ()=>{
+  async function fetchData() {
     try {
       const response = await fetch("https://faderriko.github.io/WebTips/plans.json");
       const response2 = await fetch("https://faderriko.github.io/WebTips/prediction_results.json");
@@ -27,10 +27,10 @@ export default function HomePage() {
       setLoading(false);
     }
   }
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+  fetchData();
+  // useEffect(() => {
+    
+  // }, []);
 
   return (
     <section>

@@ -14,31 +14,29 @@ export default function Plan({ params }: { params: { planIndex: any } }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async ()=> {
+  async function fetchData() {
     try {
       const response = await fetch("https://faderriko.github.io/WebTips/plans.json");
       const response2 = await fetch("https://faderriko.github.io/WebTips/predictions.json");
 
       const data = await response.json();
       const data2 = await response2.json();
-    
+
       if (params.planIndex == 0) {
         setPredictions(data2.free_tips)
       }
 
       setpackages(data.plans[params.planIndex].productsList);
       setName(data.plans[params.planIndex].name)
-     
+
       setLoading(false);
     } catch (error) {
       setError(error as any);
       setLoading(false);
     }
   }
+  fetchData();
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
 
   return (
     <section className=''>
@@ -47,7 +45,7 @@ export default function Plan({ params }: { params: { planIndex: any } }) {
       {params.planIndex != 0 ?
         <div className='flex flex-wrap justify-center mt-6'>
           {packages!.map((item: any, index: any) => (
-            <PlanItemCard title={item.name} date={item.date} index={index} id={item.id} odds={item.odds} name={name} amount={item.amount.split('Ksh').join('')}/>
+            <PlanItemCard title={item.name} date={item.date} index={index} id={item.id} odds={item.odds} name={name} amount={item.amount.split('Ksh').join('')} />
           ))}
         </div> : <div></div>
       }
