@@ -111,7 +111,7 @@ export default function Premium() {
             </tr>
           </thead>
           {predictions.map((listItem: any, index: any) => (
-            <TablePrediction predictions={listItem} index={index} />
+            <TablePrediction key = {index} predictions={listItem} index={index} />
           ))}
         </table>
       </div>

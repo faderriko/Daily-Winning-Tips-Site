@@ -37,7 +37,7 @@ export default function HomePage() {
       <Hero name={"DAILY WINNING TIPS"}/>
       <div className='flex flex-wrap justify-center mt-6'>
         {packages!.map((item: any, index: any) => (
-          <Card title={item.name} date={item.ticketDate} index={index}/>
+          <Card key = {index} title={item.name} date={item.ticketDate} index={index}/>
         ))}
       </div>
       <div>

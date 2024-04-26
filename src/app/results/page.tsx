@@ -28,8 +28,8 @@ export default function Results() {
                 <span className="flex-shrink mx-4 card-title">OUR WINNING HISTORY</span>
                 <div className="flex-grow"></div>
             </div>
-            {results.map((item: any) => (
-                <div className="pt-10 overflow-x-auto">
+            {results.map((item: any, index: any) => (
+                <div key={index} className="pt-10 overflow-x-auto">
                     <p className="card-title">{item.date}</p>
                     <hr className="border-black" />
                     <table className="table bg-base-200">

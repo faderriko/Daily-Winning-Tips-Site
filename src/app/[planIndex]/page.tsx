@@ -45,7 +45,8 @@ export default function Plan({ params }: { params: { planIndex: any } }) {
       {params.planIndex != 0 ?
         <div className='flex flex-wrap justify-center mt-6'>
           {packages!.map((item: any, index: any) => (
-            <PlanItemCard title={item.name} date={item.date} index={index} id={item.id} odds={item.odds} name={name} amount={item.amount.split('Ksh').join('')} />
+            <PlanItemCard key = {index}
+            title={item.name} date={item.date} index={index} id={item.id} odds={item.odds} name={name} amount={item.amount.split('Ksh').join('')} />
           ))}
         </div> : <div></div>
       }
