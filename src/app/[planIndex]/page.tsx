@@ -7,7 +7,7 @@ import Hero from "../../components/Hero"
 import { useState, useEffect } from 'react'
 
 
-export default function page({ params }: { params: { planIndex: any } }) {
+export default function Plan({ params }: { params: { planIndex: any } }) {
   const [packages, setpackages] = useState<any>([]);
   const [predictions, setPredictions] = useState<any>([]);
   const [name, setName] = useState<any>("");

@@ -7,7 +7,7 @@ import { TablePrediction } from "../../../../components/TablePrediction"
 import Hero from "../../../../components/Hero"
 import { useState, useEffect } from 'react'
 
-export default function pages() {
+export default function Premium() {
   const params: any = useParams()
   const [predictions, setPredictions] = useState<any>([]);
   const [name, setName] = useState<any>("");

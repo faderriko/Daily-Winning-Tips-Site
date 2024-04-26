@@ -5,7 +5,7 @@ import Hero from "../../../../../components/Hero"
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation';
 
-export default function page({ params }: { params: { gameId: any, amount: any, title: any } }) {
+export default function HowToPay({ params }: { params: { gameId: any, amount: any, title: any } }) {
     const [message, setMessage] = useState<any>("")
     const [error, setError] = useState<any>("")
     const router = useRouter()

@@ -4,7 +4,7 @@ import TableHead from '@/components/TableHead'
 import React from 'react'
 import { useState, useEffect } from 'react'
 
-export default function page() {
+export default function Results() {
     const [results, setResults] = useState<any>([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
