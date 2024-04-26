@@ -36,7 +36,6 @@ export default function Results() {
                         {/* head */}
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>Fixture</th>
                                 <th>Odds</th>
                                 <th>Predictions</th>
