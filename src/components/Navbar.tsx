@@ -13,6 +13,7 @@ const Navbar = () => {
             const response = await fetch("https://faderriko.github.io/WebTips/plans.json");
             const data = await response.json();
             settTelegramLink(data.telegramLink);
+            console.log("Telegram", data.telegramLink)
             setLoading(false);
         } catch (error) {
             setError(error as any);
@@ -42,7 +43,7 @@ const Navbar = () => {
                                 alt="Your Name"
                             />
                         </Link>
-                        <Link role="button" className="btn btn-ghost text-xl" href={telegramLink}>
+                        <Link href={telegramLink} role="button" className="btn btn-ghost text-xl">
                             <Image
                                 src="/telegram.png" // Route of the image file
                                 height={44} // Desired size with correct aspect ratio
